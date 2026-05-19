@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimalist Countdown Timer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+
+    <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
+        <span class="mode-icon">☀️</span>
+    </button>
+
+    <main class="timer-container">
+        
+        <div id="input-container" class="inputs-wrapper">
+            <div class="input-group">
+                <input type="number" id="input-hours" min="0" max="99" placeholder="00">
+                <label>HH</label>
+            </div>
+            <span class="colon">:</span>
+            <div class="input-group">
+                <input type="number" id="input-minutes" min="0" max="59" placeholder="00">
+                <label>MM</label>
+            </div>
+            <span class="colon">:</span>
+            <div class="input-group">
+                <input type="number" id="input-seconds" min="0" max="59" placeholder="00">
+                <label>SS</label>
+            </div>
+        </div>
+
+        <div id="display-container" class="display-wrapper hidden">
+            <span id="display">00:00:00<span class="ms">.000</span></span>
+        </div>
+
+        <div class="controls-row">
+            <button id="start-stop-btn" class="btn btn-primary">Start</button>
+            <button id="reset-btn" class="btn btn-secondary" disabled>Reset</button>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>by Abdur Rahman</p>
+    </footer>
+  
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,200 @@
+/* ==================== VARIABLES (Monochrome Palette) ==================== */
+:root[data-theme="dark"] {
+    --bg-color: #0d0d0e;
+    --container-bg: #16161a;
+    --border-color: #2a2a30;
+    --text-main: #f4f4f6;
+    --text-muted: #88888c;
+    --btn-primary: #f4f4f6;
+    --btn-primary-text: #0d0d0e;
+    --btn-secondary: #222227;
+    --btn-secondary-text: #e4e4e7;
+    --hover-brightness: 85%;
+}
+
+:root[data-theme="light"] {
+    --bg-color: #f4f4f6;
+    --container-bg: #ffffff;
+    --border-color: #e4e4e7;
+    --text-main: #0d0d0e;
+    --text-muted: #71717a;
+    --btn-primary: #0d0d0e;
+    --btn-primary-text: #f4f4f6;
+    --btn-secondary: #f4f4f5;
+    --btn-secondary-text: #18181b;
+    --hover-brightness: 115%;
+}
+
+/* ==================== BASE STYLES ==================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'JetBrains Mono', monospace;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ==================== THEME TOGGLE ==================== */
+.theme-btn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: transparent;
+    border: 1px solid var(--border-color);
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: var(--text-main);
+    transition: all 0.2s ease;
+}
+.theme-btn:hover {
+    background-color: var(--btn-secondary);
+}
+
+/* ==================== TIMER BOX ==================== */
+.timer-container {
+    background-color: var(--container-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 48px 32px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Input Fields Layout */
+.inputs-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.input-group input {
+    font-family: inherit;
+    font-size: 38px;
+    font-weight: 300;
+    width: 70px;
+    text-align: center;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid var(--border-color);
+    color: var(--text-main);
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.input-group input:focus {
+    border-bottom-color: var(--text-main);
+}
+
+.input-group label {
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+}
+
+.colon {
+    font-size: 32px;
+    font-weight: 300;
+    color: var(--border-color);
+    padding-bottom: 20px;
+}
+
+/* Active Display Screen */
+.display-wrapper {
+    font-size: 42px;
+    font-weight: 300;
+    letter-spacing: -1px;
+    height: 77px; /* Maintains visual layout parity with input height */
+    display: flex;
+    align-items: center;
+}
+
+.display-wrapper .ms {
+    font-size: 24px;
+    color: var(--text-muted);
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Controls Layout */
+.controls-row {
+    display: flex;
+    width: 100%;
+    gap: 12px;
+}
+
+.btn {
+    font-family: inherit;
+    flex: 1;
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: filter 0.2s ease, opacity 0.2s ease;
+}
+
+.btn:disabled {
+    opacity: 0.4;
+    max-height: 47px;
+    cursor: not-allowed;
+}
+
+.btn-primary {
+    background-color: var(--btn-primary);
+    color: var(--btn-primary-text);
+    border: none;
+}
+
+.btn-secondary {
+    background-color: var(--btn-secondary);
+    color: var(--btn-secondary-text);
+}
+
+.btn:active:not(:disabled) {
+    filter: brightness(var(--hover-brightness));
+}
+
+/* ==================== FOOTER ==================== */
+.footer {
+    margin-top: 32px;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    opacity: 0.7;
+}
+
+/* Simple fix for removal of input spinners on Chrome/Safari/Firefox */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
