@@ -2,12 +2,16 @@
 
 A browser-based countdown timer built with **HTML, CSS, and vanilla JavaScript**. Set a duration in hours, minutes, and seconds, then start, pause, or reset the countdown.
 
+### Light Theme
 ![Countdown timer Light](image/Timer_Light.png)
 
+### No Timer
 ![Countdown timer None](image/Timer_None.png)
 
+### Timer Start
 ![Countdown timer Start](image/Timer_Start.png)
 
+### Timer Start Light
 ![Countdown timer Start Light](image/Timer_Start_Light.png)
 
 ## Features
